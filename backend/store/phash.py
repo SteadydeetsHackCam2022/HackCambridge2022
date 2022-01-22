@@ -16,7 +16,7 @@ class Phash:
     def compare_phash(self, phash1, phash2):
         return phash1 - phash2
 
-    def grabcut(self, image):
+    def grabcut(self, image) -> np.array:
         # use open cv grab cut algorithm to remove background
         img = cv2.imread(image)
         mask = np.zeros(img.shape[:2], np.uint8)
@@ -28,3 +28,12 @@ class Phash:
         mask2 = np.where((mask == 2) | (mask == 0), 0, 1).astype('uint8')
         img = img * mask2[:, :, np.newaxis]
         return img
+
+    # products must be in the form [(hash, product)]
+    def phash_list(self, src_hash, products ) -> list:
+        product_scores = []
+        for product in products:
+            product_scores.append((self.compare_phash(product[0], src_hash), product[1]))
+
+        product_scores.sort(key=lambda x: x[0])
+        return product_scores
