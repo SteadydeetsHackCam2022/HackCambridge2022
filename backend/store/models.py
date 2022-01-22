@@ -10,11 +10,13 @@ SIZE_CHOICES = [
     ('xxl', 'XXL')
 ]
 
+
 GENDER_CHOICES = [
     ('m', 'Male'),
     ('f', 'Female'),
     ('u', 'Unisex')
 ]
+
 
 class Product(models.Model):
     colour = models.CharField(max_length=15)

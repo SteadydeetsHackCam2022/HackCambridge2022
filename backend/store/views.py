@@ -5,10 +5,10 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from serializers import ProductSerializer
+from .serializers import ProductSerializer
 from .models import Product
 
-class GetProduct(APIView):
+class ProductView(APIView):
     """
     List all snippets, or create a new snippet.
     """
