@@ -13,7 +13,7 @@ SIZE_CHOICES = [
 
 GENDER_CHOICES = [
     ('m', 'Male'),
-    ('f', 'Female')
+    ('f', 'Female'),
     ('u', 'Unisex')
 ]
 
