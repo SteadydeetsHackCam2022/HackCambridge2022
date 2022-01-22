@@ -5,6 +5,7 @@ import { RootTabScreenProps } from '../types';
 import { Camera } from 'expo-camera';
 import { useEffect, useState } from 'react';
 import { Box } from 'native-base';
+import React from 'react';
 
 export default function Search({ navigation }: RootTabScreenProps<'Search'>) {
   // const [hasPermission, setHasPermission] = useState<null | boolean>(null);
