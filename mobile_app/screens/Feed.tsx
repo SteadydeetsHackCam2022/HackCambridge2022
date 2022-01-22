@@ -6,6 +6,7 @@ import { Product, RootTabScreenProps } from '../types';
 import { Image, FlatList, Text, Box, AspectRatio, Center, Stack, Heading, HStack } from "native-base";
 
 import axios from 'axios';
+import React from 'react';
 
 const ProductCard = ({ product }: { product: Product }) => (
   <Box
