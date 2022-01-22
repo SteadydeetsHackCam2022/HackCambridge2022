@@ -8,7 +8,7 @@ SIZE_CHOICES = [
     ('m', 'M'),
     ('l', 'L'),
     ('xl', 'XL'),
-    ('xxl', 'XXL'),
+    ('xxl', 'XXL')
 ]
 
 GENDER_CHOICES = [
