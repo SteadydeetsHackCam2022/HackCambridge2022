@@ -21,7 +21,7 @@ class GetProduct(APIView):
     def get_object(self, pk):
         try:
             return Product.objects.get(pk=pk)
-        except Snippet.DoesNotExist:
+        except Product.DoesNotExist:
             raise Http404
 
     def post(self, request, format=None):
