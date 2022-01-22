@@ -17,6 +17,7 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import Feed from '../screens/Feed';
 import Search from '../screens/Search';
 import Profile from '../screens/Profile';
+import Signup from '../screens/Signup';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -98,6 +99,14 @@ function BottomTabNavigator() {
         component={Profile}
         options={{
           title: 'Profile',
+          tabBarIcon: ({ color }) => <TabBarIcon name="user-circle" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Signup"
+        component={Signup}
+        options={{
+          title: 'Signup',
           tabBarIcon: ({ color }) => <TabBarIcon name="user-circle" color={color} />,
         }}
       />

@@ -1,8 +1,28 @@
-import { StyleSheet } from 'react-native';
+import * as React from 'react';
+import { Searchbar } from 'react-native-paper';
+
+const MyComponent = () => {
+  const [searchQuery, setSearchQuery] = React.useState('');
+
+  const onChangeSearch = query => setSearchQuery(query);
+
+  return (
+    <Searchbar
+      placeholder="Search"
+      onChangeText={onChangeSearch}
+      value={searchQuery}
+    />
+  );
+};
+
+export default MyComponent;
+
+/*import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
+import 'react-native-paper';
 
 export default function Search({ navigation }: RootTabScreenProps<'Search'>) {
   return (
@@ -29,4 +49,4 @@ const styles = StyleSheet.create({
     height: 1,
     width: '80%',
   },
-});
+});*/
