@@ -34,3 +34,12 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> = Composit
   BottomTabScreenProps<RootTabParamList, Screen>,
   NativeStackScreenProps<RootStackParamList>
 >;
+
+export type Product = {
+  colour: string;
+  brand: string;
+  type: string;
+  price: number;
+  gender: string;
+  condition: string;
+}
