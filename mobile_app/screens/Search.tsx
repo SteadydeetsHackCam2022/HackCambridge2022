@@ -1,32 +1,27 @@
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
+import { Camera } from 'expo-camera';
+import { useEffect, useState } from 'react';
+import { Box } from 'native-base';
+
 export default function Search({ navigation }: RootTabScreenProps<'Search'>) {
+  // const [hasPermission, setHasPermission] = useState<null | boolean>(null);
+  // const [type, setType] = useState(Camera.Constants.Type.front);
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const { status } = await Camera.requestCameraPermissionsAsync();
+  //     setHasPermission(status === 'granted');
+  //     console.log(status);
+  //   })();
+  // }, []);
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Search</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/Search.tsx" />
-    </View>
+    <Box>
+{/* <Camera type={type}>
+    </Camera> */}
+    </Box>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
