@@ -5,7 +5,7 @@ from rest_framework import status
 from serializers import ProductSerializer
 from .models import Product
 
-class GetProduct(APIView):
+class ProductView(APIView):
     def get(self):
         products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
@@ -25,6 +25,14 @@ class GetProduct(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk, format=None):
-        snippet = self.get_object(pk)
-        snippet.delete()
+        product = self.get_object(pk)
+        product.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
+    def put(self, request, pk, format=None):
+        product = self.get_objects(pk)
+        serializer = SnippetSerializer(snippet, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
