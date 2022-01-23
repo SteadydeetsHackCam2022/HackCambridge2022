@@ -35,3 +35,6 @@ class ProductView(APIView):
         snippet = self.get_object(pk)
         snippet.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+def feed(request):
+    return render(request, 'feed.html')
