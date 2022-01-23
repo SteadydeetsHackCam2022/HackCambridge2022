@@ -6,33 +6,13 @@ from django.conf import settings
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-SIZE_CHOICES = [
-    ('xs', 'XS'),
-    ('s', 'S'),
-    ('m', 'M'),
-    ('l', 'L'),
-    ('xl', 'XL'),
-    ('xxl', 'XXL')
-]
-
-
-GENDER_CHOICES = [
-    ('m', 'Male'),
-    ('f', 'Female'),
-    ('u', 'Unisex')
-]
-
 
 class Product(models.Model):
-    colour = models.CharField(max_length=15)
-    brand = models.CharField(max_length=30)
-    type = models.CharField(max_length=30)
-    size = models.CharField(max_length=3, choices=SIZE_CHOICES)
-    gender = models.CharField(max_length=6, choices=GENDER_CHOICES)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=False)
+    name = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    condition = models.TextField()
-    hash = models.CharField(max_length=15)
-    user_transaction_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
+    description = models.TextField()
+    image = models.FileField(upload_to='pictures_carbonclothes')
 
 
 #automtically generates a token 

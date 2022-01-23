@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form id="add-product-form" action='/products/save' method='POST' enctype='multipart/form-data'>
+    <fieldset>
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label">Product name</label>
+        <input type="text" class="form-control" name="name" placeholder="Enter the product name">
+      </div>
+      <div class="form-group">
+        <label class="form-label mt-4">Price</label>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-text">£</span>
+            <input type="number" class="form-control" name="price" placeholder="0.00">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleTextarea" class="form-label mt-4">Product description</label>
+        <textarea class="form-control" name="description" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleSelect1" class="form-label mt-4">Product type</label>
+        <select class="form-select" name="product_type">
+          <option>Shoes</option>
+          <option>2</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="formFile" class="form-label mt-4">Photo</label>
+        <input class="form-control" type="file" name="image">
+      </div>
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+</form>
+{% endblock %}
