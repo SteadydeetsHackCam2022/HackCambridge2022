@@ -11,3 +11,19 @@ body {
     --bs-bg-opacity: 1;
     background-color: rgba(47,179,128, 1)!important;
 }
+
+.form-container {
+  margin: auto;
+  text-align: center;
+  position: relative;
+  top: 2em;
+}
+
+h1 {
+  text-align: center;
+}
+
+input[type=submit] {
+  width: 10em;
+  height: 3.5em;
+}
