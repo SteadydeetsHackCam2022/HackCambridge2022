@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'store/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <br>
+    <h1>Welcome to Carbon Clothing</h1>
+    <br>
+    <div class="form-container">
+        <form>
+            <label for="email">Email: </label>
+            <input type="text" id="email" name="email" required><br><br>
+            <label for="password">Password: </label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" class="btn btn-primary btn-lg" value="Sign up">
+        </form>
+        <br>
+        Already have an account?<br>
+        <a href="/login">Sign in</a>
+    </div>
+{% endblock %}

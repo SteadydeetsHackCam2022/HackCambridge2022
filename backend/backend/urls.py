@@ -21,6 +21,8 @@ from store import views as store_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('feed/', store_views.feed),
+    path('login/', store_views.login),
+    path('signup/', store_views.signup),
     path('products/', store_views.ProductView.as_view()),
     path('api-token-auth/', auth_views.obtain_auth_token)
 ]
