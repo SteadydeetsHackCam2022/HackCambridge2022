@@ -31,6 +31,7 @@ class Product(models.Model):
     gender = models.CharField(max_length=6, choices=GENDER_CHOICES)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     condition = models.TextField()
+    hash = models.CharField(max_length=15)
     user_transaction_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
 
 
