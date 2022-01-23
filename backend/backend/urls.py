@@ -23,6 +23,8 @@ urlpatterns = [
     path('feed/', store_views.feed),
     path('login/', store_views.login),
     path('signup/', store_views.signup),
-    path('products/', store_views.ProductView.as_view()),
-    path('api-token-auth/', auth_views.obtain_auth_token)
+    path('search/', store_views.search),
+    path('profile/', store_views.profile),
+    path('products/add', store_views.product_add),
+    path('products/save', store_views.product_save)
 ]
