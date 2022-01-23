@@ -5,13 +5,22 @@
     <br>
     <h1>Welcome to CarbonClothes</h1>
     <br>
+    {% if created %}
+    <div class="alert alert-dismissible alert-success">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>Well done!</strong> Your account has been created successfully.
+    </div>
+    {% endif %}
     <div class="form-container">
-        <form>
-            <label for="email">Email: </label>
-            <input type="text" id="email" name="email" required><br><br>
+        <form action='/signup/' method='POST'>
+            <label for="email">Username: </label>
+            <input type="text" id="username" name="username" required><br><br>
             <label for="password">Password: </label>
-            <input type="password" id="password" name="password" required><br><br>
-            <input type="submit" class="btn btn-success disabled" value="Sign up">
+            <input type="password" id="password1" name="password1" required><br><br>
+            <label for="password">Confirm password: </label>
+            <input type="password" id="password2" name="password2" required><br><br>
+            <input type="submit" class="btn btn-success" value="Sign up">
+            {% csrf_token %}
         </form>
         <br>
         Already have an account?<br>
