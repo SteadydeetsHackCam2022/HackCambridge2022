@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "minecraft-276518",
+  "private_key_id": "89c0aeb463bfe81519edca1945de400c89dbe4b6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDEPFBcTrc7Rh95\nMCklNmpY8zN33azji8aA9+FO7H7wN884n3CTcDwSUhrSLv7ys6GEUeEQEw6b0AXf\nQZu15yhNX6PkXebOUUI+yvD3sP6Rg9i5Qux0Bg7rHzhXITa/6AnvmAkR9lzSYv4Y\nlA795pcxZ2jWs4Ab+JopaI/MF2epxzQmylVpa0R4atV0OzcrzwEXq+HuJnmoh0kg\ntW7BdcToGYH0PNLe5C+u3asXEY1NOo/PWb+lQZBjGxgnbB/BoFhnj3EIkW/YTsbQ\njlbxU9UZ/797tS6ZZMFf+al7rbCMA7Iah0ac+S1NTpSBIvs1htIiJlBBL+GxR3pP\nd0YwC5otAgMBAAECggEACf5/YkAhDVwEKNYm1k4X6vlR5vorfrhE7xcQysX5Lg9N\nlrbqExw9dvpnAsrhcadr47MO2RR7YzycO/NZtJE2CIDFNlGA+oOBcfTAgoDpaixS\nmpbZt4wCcP+ZTTi0EuCEtwbheWB4eD+R7NsHi29Vxm6blIm2TdZitZatcinD/g3A\nEyW6UfanagcKh7nr9QsxsbVOnK75GKo12NNEsLsGLYgi1JPbtOZjoXzQBDwEXm0K\n92zFSwp/vR8OHxTMHx5kbwal78/YRJF2sJfpAb6sJ3wI3DfB2qodmrPfOg1ZVYeV\nBBkOTmlVwrFzRqVSKBjoa2ZMIgP/lhz3qTPd6q3uKQKBgQDrKD2Jrs723xqxRJJP\n6ilagEvZyK8PdgfP6TNdB/y1P1T7OjKjUve0LqJjZaUEsYAzuT2W9H8n73lAEy8X\n+3x4Arn1TtK044kdKCR6BMw44gxMtFjS4SGB0zMY8ws34u//oMEMj8MhRzX2mSZK\nc+Dpz3XTIcxtEWaqV3hDHSzcuQKBgQDVoO+CVUZaUR/HUoDy1y2Ze76Ti98W7jtn\nHP/80wQkOrNbPdTbypQ4K0/HAj4G/g/i+2uBgKDBGxSfrRXXU4NrZZNQjCU7R3k7\ncBv31UuotVacsbkK8XZ7N0wQQvLIg0Vk63lh4Ta5XCedHNgQHjLqivgpMMn5a1EF\nLzKaCB/3FQKBgQCgoKYYTB33J8J1398JU2vX89bb9mcN6pO/gw2guHn33EDSMpiw\nU1X77/bgamfj4tMtgZT+bhgFUWDDUddTTGdjGomndKYdBWd9URRJfMl6+X1pT690\nrG9U3M0Ed8/r5soFFOuJBxJEwv2rakVriefSDfHvvCCFR+OW65SsU1t3kQKBgQC1\nGbexX6VCj59HFFQoie4oPVU0M9Et2UwWf+krZaAPLow5/1Lh+PxqGZ2J8gavWtYQ\n8F8U6/xbeB+ltc/cOPoiI3wdPpGZjV/i2Yl8Mh/vp7sDH07lTgnJLvmWl4rGHTLI\n+S5vocMIpG0YrgkksNUtLB5wnOG8RhPrNzXIira+eQKBgQCaUn5Fr012S98S0Si6\nwaCMi3JV/hJE9bMaI5/4HUcMSi/hdp34Xx5ECcTHo4uy6YXS2uqwVqt5ijRpyXWv\n+b0lCqnoic7my5eOi1b/4ESck/bewtFK8egDdf3MjknxRqaxMtVGx/diNQsfVGAr\nNlfFsfIbHtGVQJCHk+Z3J8wgLQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "hackcambridge-filesupload@minecraft-276518.iam.gserviceaccount.com",
+  "client_id": "109001157328082218696",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/hackcambridge-filesupload%40minecraft-276518.iam.gserviceaccount.com"
+}

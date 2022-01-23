@@ -1,0 +1,13 @@
+body {
+    padding-top: 120px;
+}
+@media (max-width: 980px) {
+    body {
+      padding-top: 0;
+    }
+  }
+
+.bg-primary {
+    --bs-bg-opacity: 1;
+    background-color: rgba(47,179,128, 1)!important;
+}
