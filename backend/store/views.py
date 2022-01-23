@@ -1,3 +1,6 @@
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+
 from django.shortcuts import render
 
 from django.http import Http404
@@ -6,10 +9,29 @@ from .forms import ProductForm
 
 
 def login(request):
-    return render(request, 'login.html')
+    if request.method == 'POST':
+        form = AuthenticationForm(request.POST)
+
+        if form.confirm_login_allowed():
+            return render(request, 'login.html', context={
+                'created': True
+            })
+
+        return render(request, 'login.html')
+    elif request.method == 'GET':  
+        return render(request, 'login.html')
 
 def signup(request):
-    return render(request, 'signup.html')
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return render(request, 'signup.html', context={
+                'created': True
+            })
+
+    return render(request, 'signup.html', )
 
 def feed(request):
     products = Product.objects.all()

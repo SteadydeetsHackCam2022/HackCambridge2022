@@ -8,7 +8,7 @@ from django.dispatch import receiver
 
 
 class Product(models.Model):
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=False)
+    # owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=False)
     name = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     description = models.TextField()
