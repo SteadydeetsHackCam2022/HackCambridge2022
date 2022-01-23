@@ -6,7 +6,10 @@ from django.shortcuts import render
 from django.http import Http404
 from .models import Product
 from .forms import ProductForm
-
+from .phash import Phash
+import io
+import cv2
+import numpy as np
 
 def login(request):
     if request.method == 'POST':
@@ -43,7 +46,12 @@ def feed(request):
     return render(request, 'feed.html', context=context)
 
 def search(request):
-    return render(request, 'search.html')
+    src_img = ""
+    products = Product.objects.all()
+    scores = Phash.phash_list(src_img, products)
+    # get second element from each tuple and save in dict
+    scores_dict = {product.id: score for product, score in scores}
+    return render(request, 'feed.html', context = scores_dict )
 
 def profile(request):
     return render(request, 'profile.html')
@@ -54,8 +62,22 @@ def product_add(request):
 def product_save(request):
     if request.method != 'POST':
         return
-    
+
     form = ProductForm(request.POST, request.FILES)
 
+    # get image from django form
+    image = request.FILES['image']
+    # download image form request
+    image_file = io.BytesIO(image.read())
+    # open image_file image
+    img = cv2.imdecode(np.fromstring(image_file.getvalue(), np.uint8), cv2.IMREAD_UNCHANGED)
+
+
+    hash = Phash.get_phash(img)
+    # save hash to form
+    form.instance.hash = hash
     if form.is_valid():
         form.save()
+    else:
+        print("form is not valid")
+    return render(request, 'add_product.html')

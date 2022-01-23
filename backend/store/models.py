@@ -13,6 +13,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     description = models.TextField()
     image = models.FileField(upload_to='pictures_carbonclothes')
+    hash = models.TextField(max_length=32)
 
 
 #automtically generates a token 

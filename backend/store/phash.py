@@ -6,19 +6,25 @@ import cv2
 
 class Phash:
 
-
-    def get_phash(self, image):
-        grabcut = self.grabcut(image)
+    @staticmethod
+    def  get_phash( image):
+        grabcut = Phash.grabcut(image)
         cv2.imwrite('grabcut.jpg', grabcut)
         img = Image.open('grabcut.jpg')
         return imagehash.phash(img)
 
-    def compare_phash(self, phash1, phash2):
+    @staticmethod
+    def compare_phash( phash1, phash2):
         return phash1 - phash2
 
-    def grabcut(self, image) -> np.array:
+    @staticmethod
+    def grabcut(image) -> np.array:
+        # open image in cv2 from django
+        img = image
+
         # use open cv grab cut algorithm to remove background
-        img = cv2.imread(image)
+
+        img = image
         mask = np.zeros(img.shape[:2], np.uint8)
         bgdModel = np.zeros((1, 65), np.float64)
         fgdModel = np.zeros((1, 65), np.float64)
@@ -30,10 +36,11 @@ class Phash:
         return img
 
     # products must be in the form [(hash, product)]
-    def phash_list(self, src_hash, products ) -> list:
+    @staticmethod
+    def phash_list(src_hash, products ) -> list:
         product_scores = []
         for product in products:
-            product_scores.append((self.compare_phash(product[0], src_hash), product[1]))
+            product_scores.append((Phash.compare_phash(product[0], src_hash), product[1]))
 
         product_scores.sort(key=lambda x: x[0])
         return product_scores
